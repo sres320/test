@@ -5,8 +5,8 @@ NBA1415<-fetch_NBAPlayerStatistics("14-15")
 MaxMinutesPlayed<-aggregate(TotalMinutesPlayed~Team,NBA1415,max)
 NBA1415MaxMinutesPlayed<-merge(NBA1415,MaxMinutesPlayed)
 output<-NBA1415MaxMinutesPlayed[order(NBA1415MaxMinutesPlayed$TotalMinutesPlayed,decreasing = T),c("Team","Name","TotalMinutesPlayed")]
-library(knitr)
-kable(output, digits=2)
+output
+
 
 MaxPoint<-aggregate(TotalPoints~Team,NBA1415,max)
 NBA1415MaxPoint<-merge(NBA1415,MaxPoint)
